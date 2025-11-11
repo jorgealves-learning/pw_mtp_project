@@ -1,89 +1,90 @@
 # 🧩 GitHub Issues
 
-Os **GitHub Issues** são uma das principais ferramentas de **colaboração e gestão de tarefas** dentro de um repositório.  
-Permitem que as equipas organizem o trabalho, discutam ideias, relatem bugs e planeiem novas funcionalidades — tudo num só lugar.
+**GitHub Issues** are one of the main tools for **team collaboration and task management** within a repository.  
+They allow teams to organize work, discuss ideas, report bugs, and plan new features — all in one place.
 
 ---
 
-## 📘 O que é um Issue?
+## 📘 What is an Issue?
 
-Um **Issue** é um espaço dentro do GitHub onde é possível:
+An **Issue** is a space within GitHub where you can:
 
-- Reportar **bugs** (erros do projeto)  
-- Propor **melhorias ou novas funcionalidades**  
-- Colocar **questões** à equipa  
-- Acompanhar o **progresso de tarefas**  
-- Documentar **decisões e discussões**
+- Report **bugs** (project errors)  
+- Propose **improvements or new features**  
+- Ask **questions** to the team  
+- Track **task progress**  
+- Document **decisions and discussions**
 
-Cada Issue funciona como uma **thread de conversação** sobre um tópico específico.  
-Os membros da equipa podem comentar, adicionar imagens, referenciar commits e fechar o Issue quando a tarefa estiver concluída.
+Each Issue works like a **conversation thread** about a specific topic.  
+Team members can comment, add images, reference commits, and close the Issue once the task is completed.
 
-🟢 **Diferença entre Issues e Discussions:**
-- **Issues** → Usados para *tarefas acionáveis* (algo que precisa de ser resolvido).  
-- **Discussions** → Usadas para *conversas gerais, brainstorming e ideias* ainda não transformadas em tarefas.
+🟢 **Difference between Issues and Discussions:**
+- **Issues** → Used for *actionable tasks* (something that needs to be resolved).  
+- **Discussions** → Used for *general conversations, brainstorming, and ideas* that have not yet become tasks.
 
 ---
 
-## 🧰 Como Criar um Issue (Passo a Passo)
+## 🧰 How to Create an Issue (Step by Step)
 
-1. Acede ao separador **Issues** do repositório.  
-2. Clica em **New Issue**.  
-3. Escolhe um **template** (se existir).  
-4. Escreve um **título curto e claro**.  
-5. Adiciona uma **descrição detalhada** a explicar o problema, objetivo ou sugestão.  
-6. Define **labels**, **assignees** e **milestones** (ver secção seguinte).  
-7. Clica em **Submit new issue**.
+1. Go to the repository’s **Issues** tab.  
+2. Click **New Issue**.  
+3. Choose a **template** (if available).  
+4. Write a **short and clear title**.  
+5. Add a **detailed description** explaining the problem, goal, or suggestion.  
+6. Set **labels**, **assignees**, and **milestones** (see the section below).  
+7. Click **Submit new issue**.
 
-### 🧩 Exemplo
+### 🧩 Example
 
-| Campo | Exemplo |
-|-------|----------|
-| **Título** | Adicionar secção sobre Revisão de Pull Requests |
-| **Descrição** | É necessário documentar o processo de revisão de PRs com exemplos práticos. |
+| Field | Example |
+|-------|---------|
+| **Title** | Add section about Pull Request Reviews |
+| **Description** | We need to document the PR review process with practical examples. |
 | **Labels** | `documentation`, `enhancement` |
-| **Assignee** | @o-teu-utilizador |
+| **Assignee** | @your-username |
 
 ---
 
-## 🏷️ Labels, Assignees e Milestones
+## 🏷️ Labels, Assignees, and Milestones
 
 ### 🏷️ Labels  
-As **labels** são etiquetas que ajudam a categorizar Issues.  
-Exemplos comuns:
+**Labels** are tags that help categorize Issues.  
+Common examples include:
 
-- 🐛 `bug` → erro ou problema no projeto  
-- ✨ `enhancement` → melhoria ou otimização  
-- 🧱 `documentation` → tarefas relacionadas com documentação  
-- ❓ `question` → questões gerais  
-- 🚀 `feature` → nova funcionalidade  
+- 🐛 `bug` → an error or problem in the project  
+- ✨ `enhancement` → an improvement or optimization  
+- 🧱 `documentation` → documentation-related tasks  
+- ❓ `question` → general questions  
+- 🚀 `feature` → a new functionality  
 
-É possível criar labels personalizadas em **Settings → Labels**.
+You can create custom labels in **Settings → Labels**.
 
 ---
 
 ### 👤 Assignees  
-Os **assignees** são os responsáveis por resolver o Issue.  
-É boa prática atribuir sempre alguém para garantir que a tarefa avança.
+**Assignees** are the people responsible for resolving the Issue.  
+It is good practice to always assign someone to ensure the task progresses.
 
 ---
 
 ### 🎯 Milestones  
-Os **milestones** permitem agrupar Issues por **versão, fase ou objetivo**.  
-Exemplos:
+**Milestones** allow you to group Issues by **version, phase, or goal**.  
+Examples include:
 
-- *Versão 1.0*  
-- *Entrega Final*  
+- *Version 1.0*  
+- *Final Delivery*  
 - *Sprint 3*
 
 ---
 
-## 🔗 Associar Issues a Commits e Pull Requests
+## 🔗 Linking Issues to Commits and Pull Requests
 
-Ligar Issues a commits e PRs ajuda a manter o histórico do projeto organizado.  
-Podes fazê-lo de várias formas:
+Linking Issues to commits and PRs helps keep the project’s history organized.  
+You can do this in several ways:
 
-### 🔸 Nos Commits
-Ao fazer um commit, podes referenciar um Issue assim:
+### 🔸 In Commits
+When making a commit, you can reference an Issue like this:
 
 ```bash
-git commit -m "docs: atualizar secção sobre GitHub Issues (#12)"
+git commit -m "docs: update section about GitHub Issues (#12)"
+```
