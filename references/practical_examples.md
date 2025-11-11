@@ -3,10 +3,10 @@
 This file provides practical examples and guidance on how to use GitHub tools effectively.  
 It complements the following detailed guides:
 
-- [Issues and Discussions](issues_and_discussions.md)  
-- [Pull Requests and Reviews](pull_requests_and_reviews.md)  
-- [Wiki and Documentation](wiki_and_documentation.md)  
-- [Project Management](project_management.md)  
+- [Issues and Discussions](../collaboration/issues_and_discussions.md)  
+- [Pull Requests and Reviews](../collaboration/pull_requests_and_reviews.md)  
+- [Wiki and Documentation](../collaboration/wiki_and_documentation.md)  
+- [Project Management](../collaboration/project_management.md)  
 
 ---
 ## 1️⃣ Issues and Discussions
