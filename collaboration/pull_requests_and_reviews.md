@@ -1,237 +1,185 @@
-# 🧩 Understanding Pull Requests and Code Reviews on GitHub
+Sure! Here’s a version of your document rewritten for **better readability for beginners**.
+I simplified language, added short explanations, and cleaned up formatting for clarity — all while keeping it GitHub markdown ready.
 
-## 📘 Overview
 
-When working collaboratively on a Git/GitHub project, two core features ensure smooth teamwork and high-quality code:
+# Pull Request Workflow & Code Review Guide
 
-1. **Pull Requests (PRs)** – A structured way to propose, discuss, and merge code changes.  
-2. **Code Reviews** – The process of evaluating and providing feedback on those proposed changes.
+## 📑 Table of Contents
 
-Together, they form the backbone of **professional Git workflows**, ensuring that every contribution is intentional, reviewed, and tested before being merged into the main codebase.
-
----
-
-## 🚀 What is a Pull Request?
-
-A **Pull Request (PR)** is a formal request to **merge** changes from one branch into another.
-
-You can think of it as:
-
-> “I’ve made some improvements — please review them and merge if appropriate.”
-
-Pull Requests help the team to:
-
-* Review code before merging
-* Discuss implementation details
-* Automatically test changes via CI/CD pipelines
-* Maintain a clear and traceable contribution history
+1. [Create a Branch or Fork](#create-a-branch-or-fork)  
+2. [Commit Your Changes](#commit-your-changes)  
+3. [Push the Branch to GitHub](#push-the-branch-to-github)  
+4. [Open a Pull Request (PR)](#open-a-pull-request-pr)  
+5. [Discuss and Review](#discuss-and-review)  
+6. [Merge or Close](#merge-or-close)  
+7. [Merge Options](#merge-options)  
+8. [Code Review Guide](#code-review-guide)  
+9. [Best Practices](#best-practices)  
+10. [Lifecycle Diagram](#lifecycle-diagram)  
+11. [Practical Workflow Example](#practical-workflow-example)  
+12. [Additional Resources](#additional-resources)
 
 ---
 
-## 🔁 How a Pull Request Works (Workflow)
+## Create a Branch or Fork
 
-### 1. Create a Branch or Fork
+When you want to make changes, start by creating your own workspace:
 
-* If you have write access to the repository: create a **branch** in the same repository.  
-  Example: `feature/add-login-page`
-* If you don’t: **fork** the repository and work on your own copy.
+- **If you have permission to write to the repository:**  
+  Create a new branch to work on your changes. This keeps your work separate from the main code.  
+  Example branch name: `feature/add-login-page`  
 
-### 2. Commit Your Changes
-
-After making updates, commit them to your branch:
-
-Este bloco de Markdown está completo e segue o fluxo exato que indicaste, formatado para ser copiado diretamente para o teu `README` do GitHub:
-
------
+  git checkout -b feature/add-login-page
 
 
- 2. Commitar as Tuas Alterações
+* **If you don’t have permission:**
+  Fork (copy) the repository to your own GitHub account. Then clone your fork to your computer.
+  Work on your fork and create branches there.
 
-Depois de fazeres as tuas atualizações, deves commitar estas alterações para a tua *branch*:
+---
 
-```bash
-git add .
-git commit -m "feat(login): add user authentication flow"
-````
+## Commit Your Changes
 
-### 3\. Fazer Push da Branch para o GitHub
+After you make changes to files:
 
-Publica a tua *branch* no repositório remoto (o `origin`):
+1. **Stage your changes** to prepare them for commit:
+
+   ```bash
+   git add .
+   ```
+2. **Commit your changes** with a clear message describing what you did.
+   Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format to keep messages consistent:
+
+   ```bash
+   git commit -m "feat(login): add user authentication flow"
+   ```
+
+---
+
+## Push the Branch to GitHub
+
+Send your local branch and commits to GitHub:
 
 ```bash
 git push origin feature/add-login-page
 ```
 
-### 4\. Abrir um Pull Request (PR)
+---
 
-Vai ao repositório no GitHub:
+## Open a Pull Request (PR)
 
-  * Clica em **Compare & pull request**.
-  * **Seleciona as branches:**
-      * **Base branch** → Onde queres integrar (e.g., `main`)
-      * **Compare branch** → A tua *feature branch*
-  * **Adiciona:** Um título claro e uma descrição detalhada (*o quê, o porquê e o como*).
+* Go to the original repository on GitHub.
+* You might see a **Compare & pull request** button—click it.
+* Choose the base branch (usually `main` or `master`) and your branch.
+* Write a clear title and detailed description explaining your changes and why.
+* Submit the Pull Request (PR) to start the review process.
 
-**Exemplo de Descrição:**
+---
 
-```
-Title: Implement user authentication flow
-Description:
-Implements login and logout using JWT tokens.
-Includes form validation and session persistence.
-```
+## Discuss and Review
 
-### 5\. Discutir e Rever
+* Your teammates will review the PR and leave comments or suggestions.
+* You can reply to feedback, make improvements, commit, and push updates.
+* All new commits automatically update the PR.
 
-Os membros da equipa comentam, fazem perguntas e sugerem alterações diretamente no PR.
+---
 
-### 6\. Integrar (*Merge*) ou Fechar
+## Merge or Close
 
-Quando o PR é aprovado e passa todos os testes:
+* After approval and successful tests, merge your PR into the base branch.
+* Delete your feature branch to keep the repository clean.
+* If your changes are no longer needed, close the PR without merging.
 
-  * É integrado (*merged*) na *base branch*.
-  * A *feature branch* pode ser apagada em segurança.
+---
 
------
+## Merge Options
 
-### ⚙️ Opções de Integração (*Merge*)
+GitHub offers different ways to merge your changes:
 
-Ao integrar um PR, podes escolher entre três estratégias (vistas no GitHub):
+| Merge Type           | What it does                                                  | When to use                                       |
+| -------------------- | ------------------------------------------------------------- | ------------------------------------------------- |
+| **Merge Commit**     | Keeps all commits and adds a merge commit to history.         | When you want full history and context.           |
+| **Squash and Merge** | Combines all commits into one clean commit.                   | To keep the main branch history simple and clean. |
+| **Rebase and Merge** | Applies your commits on top of the base branch without merge. | To create a linear, easy-to-follow history.       |
 
-| Tipo de Merge | Descrição | Caso de Uso |
-| :--- | :--- | :--- |
-| **Merge Commit** | Mantém o histórico completo e adiciona um *merge commit*. | Uso quando um histórico detalhado é necessário. |
-| **Squash and Merge** | Combina todos os *commits* num só. | Mantém o histórico da `main` limpo para alterações pequenas. |
-| **Rebase and Merge** | Reaplica os *commits* por cima da *target branch*. | Cria um histórico linear; usado em fluxos de trabalho avançados. |
+---
 
------
+## Code Review Guide
 
-## 💬 O que é um Code Review?
+Code reviews help improve quality and share knowledge:
 
-Um **Code Review** é o processo de examinar o código de outro programador para garantir:
+* Check if the code works correctly and follows style guidelines.
+* Give clear, respectful, and helpful feedback.
+* Suggest specific improvements using GitHub's review tools.
+* Verify tests and documentation are updated if needed.
 
-  * Qualidade e legibilidade do código.
-  * Corretude e eficiência.
-  * Consistência com os padrões do projeto.
-  * Segurança e desempenho.
-  * Entendimento partilhado entre os contribuidores.
+---
 
-É um processo de melhoria colaborativa, não uma crítica — o objetivo é melhorar o código, não culpar o autor.
+## Best Practices
 
-### 🔍 O Processo de Code Review
+### For PR Authors
 
-1.  **Revisor Recebe o Pull Request**
-    O revisor examina:
-      * Ficheiros alterados.
-      * Mensagens de *commit*.
-      * Descrição do PR e *issues* associadas.
-2.  **Revisão do Código**
-    Os revisores podem:
-      * Adicionar comentários em linhas específicas.
-      * Sugerir alterações (*Suggestions*).
-      * Aprovar ou pedir modificações (*Request changes*).
+* Keep your PRs small and focused on one thing.
+* Use clear, descriptive titles and commit messages.
+* Add tests for any new features or fixes.
+* Link related issues, e.g., `Fixes #123`.
+* Review your own code before submitting.
 
-**Exemplo de Sugestão *inline***:
+### For Reviewers
 
-```diff
-- const MAX_USERS = 500
-+ const MAX_USERS = 1000 // adjusted limit based on new requirements
-```
+* Be polite and constructive.
+* Focus on the code, not the person.
+* Ask questions if something is unclear.
+* Approve promptly when concerns are addressed.
 
-3.  **Comunicação e Iteração**
-    O autor pode:
+---
 
-      * Responder ao *feedback*.
-      * Commiter correções adicionais.
-      * Fazer *push* de atualizações — todas as alterações aparecem automaticamente no mesmo PR.
+## Lifecycle Diagram
 
-4.  **Aprovação e Merge**
+Here’s the basic Pull Request process:
 
-      * Assim que todo o *feedback* é resolvido, os revisores aprovam o PR.
-      * O *Maintainer* integra (*merges*) na *main branch*.
+1. Create a branch
+2. Make and commit changes
+3. Open a Pull Request
+4. Discuss and review the changes
+5. Make updates if needed
+6. Approve and merge the PR
+7. Delete the feature branch
 
------
+If reviewers request changes, repeat steps 4 and 5.
 
-## 🧠 Melhores Práticas
+---
 
-### ✅ Para Pull Requests (Autores)
+## Practical Workflow Example
 
-  * **Keep PRs small and focused** — PRs menores são mais fáceis de rever e integram mais rapidamente.
-  * **Use descriptive titles and messages** — Explica claramente o quê e porquê.
-  * **Include tests whenever possible** — Adiciona ou atualiza testes para novas funcionalidades.
-  * **Link related issues** — Faz referência a *issues* no GitHub, por exemplo: `Fixes #42`
-  * **Review your own code** — Faz uma *self-review* antes de pedir *feedback*.
 
-### 💬 Para Code Reviews (Revisores)
-
-| Para Autores | Para Revisores |
-| :--- | :--- |
-| Be clear and concise in your PR. | Be respectful and constructive. |
-| Don’t take feedback personally. | Focus on the code, not the coder. |
-| Respond to all comments. | Ask questions if unclear. |
-| Thank reviewers for their time. | Approve quickly once issues are fixed. |
-
------
-
-## 🔁 O Ciclo de Vida do Pull Request & Review
-
-O fluxo de trabalho típico segue esta sequência:
-
-```mermaid
-graph TD
-    A[Create Branch] --> B(Commit Changes);
-    B --> C(Open Pull Request);
-    C --> D{Discussion & Code Review};
-    D --> E{Revisions & Updates};
-    E -- Approved --> F(Approval & Merge);
-    F --> G[Branch Deleted];
-    E -- Needs more work --> D;
-```
-
------
-
-## 💡 Exemplo Prático de Workflow
-
-Vê o fluxo de comandos no teu terminal:
-
-```bash
-# 1. Clone the repository
-git clone [https://github.com/username/repo.git](https://github.com/username/repo.git)
+# Clone the repository
+git clone https://github.com/username/repo.git
 cd repo
 
-# 2. Create a new branch
+# Create a new branch for your work
 git checkout -b docs/explain-pull-requests
 
-# 3. Edit documentation
+# Edit files (e.g., README.md)
 nano README.md
 
-# 4. Stage and commit your changes
+# Stage and commit your changes
 git add README.md
-git commit -m "docs(readme): add detailed explanation of pull requests and reviews"
+git commit -m "docs(readme): add pull request workflow and code review guide"
 
-# 5. Push the branch to GitHub
+# Push the branch to GitHub
 git push origin docs/explain-pull-requests
 
-# 6. Open a Pull Request on GitHub
-# Compare with main, describe changes, and request review
-```
+# Then open a Pull Request on GitHub and request review
 
-### 🧩 Exemplo de Conventional Commit
 
-Ao commitar esta documentação, deves seguir o padrão [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/):
+---
 
-```bash
-docs(readme): add detailed explanation of pull requests and reviews
-```
+## Additional Resources
 
------
-
-## 📚 Recursos Adicionais
-
-  * [GitHub Docs: About Pull Requests](https://www.google.com/search?q=https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-project/about-pull-requests)
-  * [GitHub Docs: Reviewing Changes in Pull Requests](https://www.google.com/search?q=https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-code-reviews)
-  * [GitHub Flow Guide](https://www.google.com/search?q=https://docs.github.com/en/get-started/using-git/github-flow)
-  * [Conventional Commits Specification](https://www.conventionalcommits.org/en/v1.0.0/)
-
+* [GitHub Docs: About Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-project/about-pull-requests)
+* [GitHub Docs: Reviewing Changes in Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-code-reviews)
+* [GitHub Flow Guide](https://docs.github.com/en/get-started/using-git/github-flow)
+* [Conventional Commits Specification](https://www.conventionalcommits.org/en/v1.0.0/)
 
 
