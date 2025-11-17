@@ -94,3 +94,18 @@ Keep the subject up to 50 characters and the description formatted in 72-charact
 
 5. Conclusion
 In this tutorial, we’ve studied the main best practices for writing good Git commit messages. As we’ve learned, there are many common practices, such as the 50/72 rule and conventional commits, which lead us to well-structured and informative commit messages.
+
+
+
+**Content Checklist:**
+
+- [✅] All required topics are covered
+- [✅] No spelling or grammar errors
+
+**Git Checklist:**
+
+- [✅] All team members have commits
+- [✅] Commit messages are clear and follow conventions
+- [✅] No merge conflicts with target branch
+
+
