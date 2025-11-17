@@ -147,30 +147,38 @@ If reviewers request changes, repeat steps 4 and 5.
 
 ---
 
-## Practical Workflow Example
+# Practical Workflow Example
 
 
-# Clone the repository
+## Clone the repository
+```
 git clone https://github.com/username/repo.git
 cd repo
+```
 
-# Create a new branch for your work
+## Create a new branch for your work
+```
 git checkout -b docs/explain-pull-requests
+```
 
-# Edit files (e.g., README.md)
+## Edit files (e.g., README.md)
+```
 nano README.md
+```
 
-# Stage and commit your changes
+## Stage and commit your changes
+```
 git add README.md
 git commit -m "docs(readme): add pull request workflow and code review guide"
+```
 
-# Push the branch to GitHub
+## Push the branch to GitHub
+```
 git push origin docs/explain-pull-requests
+```
+## Then open a Pull Request on GitHub and request review
 
-# Then open a Pull Request on GitHub and request review
 
-
----
 
 ## Additional Resources
 
