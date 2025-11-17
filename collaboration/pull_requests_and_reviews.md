@@ -1,6 +1,3 @@
-Sure! Here’s a version of your document rewritten for **better readability for beginners**.
-I simplified language, added short explanations, and cleaned up formatting for clarity — all while keeping it GitHub markdown ready.
-
 
 # Pull Request Workflow & Code Review Guide
 
