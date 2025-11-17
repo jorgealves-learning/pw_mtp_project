@@ -6,6 +6,8 @@ Branches are used to develop different things at the same time, since features t
 ## **Git Flow**
 Git-Flow is a branching strategy that aims to cover various scenarios. It defines specific branch responsibilities, the life-cycle involves branching off from develop, integrating features, creating release branches for testing, merging into main/master, and tagging versions.
 
+![](/images/1_MsVN9FOK7Aaue2gFYsehIg.png)
+
 Pros:
 - Well-suited for large teams and aligning work across multiple teams.
 - Effective handling of multiple product versions.
@@ -19,6 +21,8 @@ Cons:
 
 ## **GitHub-Flow:**
 GitHub-Flow simplifies Git-Flow by eliminating release branches. It revolves around one active development branch that is directly deployed to production. Features and bug fixes are implemented using long-living feature branches. Better for smaller and teams as they don't have many branches. The main idea behind this model is keeping the master code in a constant deployable state and hence can support continuous integration and continuous delivery processes.
+
+![](/images/1_bFl2IXVT2xIRy8uOm7v4JA.png)
 
 Pros:
 - Faster feedback cycles and shorter production cycles.
@@ -34,6 +38,8 @@ Cons:
 ## **GitLab Flow**
 GitLab Flow is a balance between the two before. It has GitHub-Flow’s simplicity while introducing additional branches representing staging environments before production. The main branch still represents the production environment. With GitFlow, developers create a develop branch and make that the default while GitLab Flow works with the main branch right away.
 
+![](/images/gitlab_flow_environment_branches.png)
+
 Pros:
 - Can handle multiple release versions or stages effectively.
 - Simpler than Git-Flow.
@@ -45,6 +51,8 @@ Cons:
 ## **Trunk Based Development**
 
 Trunk Based Development promotes a single shared branch called “trunk” and eliminates long-living branches. There are two variations based on team size: smaller teams commit directly to the trunk, while larger teams create short-lived feature branches. Frequent integration of smaller feature slices is encouraged to ensure regular merging.
+
+![](/images/Screenshot-2024-03-26-at-21.webp)
 
 Pros:
 - Encourages DevOps and unit testing best practices.
