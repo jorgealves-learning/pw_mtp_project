@@ -10,7 +10,7 @@ They allow teams to organize work, discuss ideas, report bugs, and plan new feat
 An **Issue** is a space within GitHub where you can:
 
 - Report **bugs** (project errors)  
-- Propose **improvements or new features**  
+- Propose **improvements or new features**
 - Ask **questions** to the team  
 - Track **task progress**  
 - Document **decisions and discussions**
@@ -43,6 +43,7 @@ Team members can comment, add images, reference commits, and close the Issue onc
 | **Labels** | `documentation`, `enhancement` |
 | **Assignee** | @your-username |
 
+![example-issue-screen](../images/issues_resources/issue_img.png)
 ---
 
 ## 🏷️ Labels, Assignees, and Milestones
