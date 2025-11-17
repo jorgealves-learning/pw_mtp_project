@@ -1,3 +1,4 @@
+
 # Introduction
 
 ## 📂 Structure Overview
@@ -82,6 +83,11 @@ The fundamental concept is that a branch name should immediately answer two ques
 
 ## **What are Workflow Patterns?**
 Workflow Patterns, or Branching Strategies , are the set of methodological rules and conventions that a team adopts to manage software development using Git (the terminal tool) and GitHub (the collaboration platform).
+
+💡 Introduction to Git Commit Messages
+In any project that uses Git for version control, the commit is the fundamental unit that records changes in the code. Think of a commit as a "save point" or a checkpoint in the timeline of your project.
+
+[Link to Commit Messages Best Pratices](/pw_mtp_project/Commit%20Message%20Best%20Practices/commit_messages)
 
 These aren't new Git commands; it's about how and when your team uses commands like git branch`git pull` git mergeor `git git pushgit add`. The main goal is to standardize collaboration so everyone is on the same page when adding a feature or fixing a bug .
 
